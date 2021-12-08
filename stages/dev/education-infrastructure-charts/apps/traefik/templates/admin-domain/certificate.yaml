@@ -1,9 +1,9 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name:  {{.Release.Name}}-cert
+  name:  admin-domain
 spec:
-  secretName: {{.Release.Name}}-cert
+  secretName: admin-domain
   issuerRef:
     name: letsencrypt
     kind: ClusterIssuer
