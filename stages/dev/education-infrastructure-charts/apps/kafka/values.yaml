@@ -38,3 +38,4 @@ akhq:
   readinessProbe:
     prefix: "/akhq"
   hostPrefixRegex: "HostRegexp(`{host:admin.+}`)"
+domain: "admin.showcase.iits.tech"
