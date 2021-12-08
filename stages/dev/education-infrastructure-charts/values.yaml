@@ -1,0 +1,18 @@
+global:
+  stage: dev
+  projectName: education-infrastructure-charts
+  source:
+    repoURL: https://github.com/nano3k0a/education-infrastructure-charts.git
+    targetRevision: working
+    appsBasePath: stages/dev/education-infrastructure-charts/apps
+
+predator:
+  namespace: predator
+traefik:
+  namespace: routing
+  ignoreDifferences:
+    - kind: Service
+      jsonPointers:
+        - /metadata/annotations
+cert-manager:
+  namespace: cert-manager

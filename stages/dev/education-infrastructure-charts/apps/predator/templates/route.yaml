@@ -1,0 +1,20 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: {{ .Release.Name }}
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - kind: Rule
+      match: "HostRegexp(`{host:{{.Release.Name}}.+}`) && (PathPrefix(`/`))"
+      services:
+        - kind: Service
+          name: {{.Release.Name}}
+          namespace: {{ .Release.Namespace }}
+          passHostHeader: true
+          port: 80
+  tls:
+    secretName: {{.Release.Name}}-cert
+    domains:
+      - main: {{.Values.domain}}

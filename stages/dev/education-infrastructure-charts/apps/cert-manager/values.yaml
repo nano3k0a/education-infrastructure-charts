@@ -1,0 +1,6 @@
+cert-manager:
+  installCRDs: false
+  webhook:
+    securePort: 10253
+    hostNetwork: true
+elbID: "SET-IN-HELM-CHARTS-MANAGER.CONFIG.YAML"

@@ -1,0 +1,5 @@
+apiVersion: v2
+name: education-infrastructure-charts
+description: education-infrastructure-charts services managed by argo-cd (for testing)
+type: application
+version: 0.1.0

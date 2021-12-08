@@ -1,0 +1,11 @@
+apiVersion: externaldns.k8s.io/v1alpha1
+kind: DNSEndpoint
+metadata:
+  name: {{.Release.Name}}
+spec:
+  endpoints:
+    - dnsName: {{.Release.Name}}.iits.tech
+      recordTTL: 180
+      recordType: A
+      targets:
+        - {{ .Values.global.publicIP }}
