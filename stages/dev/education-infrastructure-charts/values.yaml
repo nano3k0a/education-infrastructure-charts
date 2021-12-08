@@ -5,22 +5,5 @@ global:
     repoURL: https://github.com/nano3k0a/education-infrastructure-charts.git
     targetRevision: main
     appsBasePath: stages/dev/education-infrastructure-charts/apps
-
-predator:
-  namespace: predator
-traefik:
-  namespace: routing
-  ignoreDifferences:
-    - kind: Service
-      jsonPointers:
-        - /metadata/annotations
-cert-manager:
-  namespace: cert-manager
-  helm:
-    parameters:
-      - name: elbID
-        value: "vault:secret/data/prod/elb_info#elb_id"
-      - name: clusterIssuer.dns.azure.sp.clientSecret
-        value: "vault:secret/data/common/iits-dns#azure-aadClientSecret"
-kafka:
-  namespace: kafka
+http-inspector:
+  namespace: default
