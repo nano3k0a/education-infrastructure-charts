@@ -27,4 +27,5 @@ traefik:
       port: 4443
       expose: true
       protocol: TCP
-hostPrefixRegex: "HostRegexp(`{host:admin.*}`)"
+domain: "admin.showcase.iits.tech"
+
