@@ -13,3 +13,5 @@ traefik:
   namespace: routing
 kafka:
   namespace: kafka
+predator:
+  namespace: default

@@ -1,0 +1,6 @@
+dependencies:
+- name: predator
+  repository: https://zooz.github.io/helm/
+  version: 1.6.1
+digest: sha256:3f694537c12fc043c4616abf61aadda5271e4488eb3c88e692291bf958895f91
+generated: "2021-07-15T16:08:08.728583134+02:00"

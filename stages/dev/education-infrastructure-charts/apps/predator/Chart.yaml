@@ -1,0 +1,9 @@
+apiVersion: v2
+dependencies:
+ - repository: https://zooz.github.io/helm/
+   version: 1.6.1
+   name: predator
+appVersion: "1.6"
+description: Predator
+name: predator
+version: 0.1.0-6049769875b40f337b3c9efa99e6e98e40e809be
