@@ -7,3 +7,7 @@ global:
     appsBasePath: stages/dev/education-infrastructure-charts/apps
 http-inspector:
   namespace: default
+cert-manager:
+  namespace: cert-manager
+traefik:
+  namespace: routing

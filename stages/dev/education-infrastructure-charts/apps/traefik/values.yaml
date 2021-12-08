@@ -1,0 +1,30 @@
+traefik:
+  globalArguments:
+    - "--global.checknewversion"
+  logs:
+    general:
+      format: json
+      level: INFO
+    access:
+      format: json
+      enabled: false
+  image:
+    tag: 2.3.3
+  deployment:
+    replicas: 1
+  service:
+    type: LoadBalancer
+    spec:
+      externalTrafficPolicy: Cluster
+  providers:
+    kubernetesCRD:
+      enabled: true
+    kubernetesIngress:
+      enabled: true
+  ports:
+    jitsi-jvb:
+      exposedPort: 4443
+      port: 4443
+      expose: true
+      protocol: TCP
+hostPrefixRegex: "HostRegexp(`{host:admin.*}`)"
