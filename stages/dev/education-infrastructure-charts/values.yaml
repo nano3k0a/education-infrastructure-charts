@@ -3,7 +3,7 @@ global:
   projectName: education-infrastructure-charts
   source:
     repoURL: https://github.com/nano3k0a/education-infrastructure-charts.git
-    targetRevision: working
+    targetRevision: main
     appsBasePath: stages/dev/education-infrastructure-charts/apps
 
 predator:
