@@ -4,8 +4,7 @@ metadata:
   name: {{ .Release.Name }}
 spec:
   entryPoints:
-    - web
-    - websecure
+    - internalhttps
   routes:
     - kind: Rule
       match: PathPrefix(`/{{ .Release.Name }}`)
@@ -15,6 +14,3 @@ spec:
           namespace: {{ .Release.Namespace }}
           passHostHeader: true
           port: 80
-  tls:
-    store:
-      name: admin-domain

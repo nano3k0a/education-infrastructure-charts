@@ -22,10 +22,14 @@ traefik:
     kubernetesIngress:
       enabled: true
   ports:
-    jitsi-jvb:
-      exposedPort: 4443
-      port: 4443
-      expose: true
+    internalhttps:
+      exposedPort: 8444
+      port: 8444
+      expose: false
       protocol: TCP
+      tls:
+        enabled: false
 domain: "admin.showcase.iits.tech"
+admin:
+  hostPrefixRegex: "HostRegexp(`{host:admin.+}`)"
 

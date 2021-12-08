@@ -1,0 +1,20 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: admin-default-route
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - kind: Rule
+      match: {{.Values.admin.hostPrefixRegex }}
+      priority: 1000
+      services:
+        - name: traefik
+          kind: Service
+          terminationDelay: 3600
+          namespace: {{ .Release.Namespace }}
+          port: 8444
+  tls:
+    store:
+      name: admin-domain
