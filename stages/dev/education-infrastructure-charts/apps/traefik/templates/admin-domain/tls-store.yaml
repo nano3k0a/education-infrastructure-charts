@@ -1,7 +1,0 @@
-apiVersion: traefik.containo.us/v1alpha1
-kind: TLSStore
-metadata:
-  name: admin-domain
-spec:
-  defaultCertificate:
-    secretName: admin-domain

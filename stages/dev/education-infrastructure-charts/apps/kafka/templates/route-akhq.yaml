@@ -4,7 +4,8 @@ metadata:
   name: akhq
 spec:
   entryPoints:
-    - internalhttps
+    - web
+    - websecure
   routes:
     - kind: Rule
       match: {{.Values.akhq.hostPrefixRegex}} && PathPrefix(`/akhq`)
@@ -14,3 +15,5 @@ spec:
           namespace: {{ .Release.Namespace }}
           passHostHeader: true
           port: 80
+  tls:
+    secretName: admin-domain

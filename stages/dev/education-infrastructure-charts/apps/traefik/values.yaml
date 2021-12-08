@@ -30,6 +30,4 @@ traefik:
       tls:
         enabled: false
 domain: "admin.showcase.iits.tech"
-admin:
-  hostPrefixRegex: "HostRegexp(`{host:admin.+}`)"
 
