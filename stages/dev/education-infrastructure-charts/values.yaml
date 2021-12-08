@@ -16,3 +16,11 @@ traefik:
         - /metadata/annotations
 cert-manager:
   namespace: cert-manager
+  helm:
+    parameters:
+      - name: elbID
+        value: "vault:secret/data/prod/elb_info#elb_id"
+      - name: clusterIssuer.dns.azure.sp.clientSecret
+        value: "vault:secret/data/common/iits-dns#azure-aadClientSecret"
+kafka:
+  namespace: kafka
