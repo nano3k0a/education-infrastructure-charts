@@ -1,13 +1,13 @@
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: akhq
+  name: {{ .Release.Name }}
 spec:
   entryPoints:
     - internalhttps
   routes:
     - kind: Rule
-      match: PathPrefix(`/http-inspector`)
+      match: PathPrefix(`/{{ .Release.Name }}`)
       services:
         - kind: Service
           name: {{ .Release.Name }}
